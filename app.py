@@ -6,4 +6,4 @@ def index():
     return "this is a test for gcloud. lets see if we can get this up and running"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
