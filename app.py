@@ -1,10 +1,15 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "this is a test for gcloud. lets see if we can get this up and running"
+    return render_template("index.html")
+app.route("/login")
+def login():
+    return "our login page"
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
