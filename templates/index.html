@@ -3,10 +3,18 @@
 <body>
   <div class="container">
     <h1 class="jumbotron col-lg-6">LOOMVR</h1>
-    <ul>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/register">Register</a></li>
-    </ul>
+
+    <div class="col-lg-4">
+        {% if current_user.is_authenticated %}
+            <h2>Welcome {{current_user.username }}</h2>
+            <h2 class="btn"><a href="/logout">Logout</a></h2>
+        {% else %}
+        <ul>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+        {%endif%}
+    </div>
 
   </div>
 </body>
