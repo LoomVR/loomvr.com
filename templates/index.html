@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
+{% from "macros.html" import render_field %}
 {%block content%}
 <body>
   <div class="container">
     <div class="row">
-      <h1 class="jumbotron col-lg-6">LOOMVR</h1>
-
-      <div class="col-lg-4">
+      <h1 class="jumbotron col-md-10">LOOMVR</h1>
+      <div class="col-md-2">
           {% if current_user.is_authenticated %}
               <h2>Welcome {{current_user.username }}</h2>
               <h2 class="btn"><a href="/logout">Logout</a></h2>
@@ -17,6 +17,47 @@
           {%endif%}
       </div>
     </div>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <h3>What is loom? (add icons)</h3>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>What Features help you learn?</h3>
+            <br>
+            <p>
+              <ol>
+                <li>See the definition of objects in the world</li>
+                <li>Have actual conversations with the townspeople -microphone required-</li>
+                <li>Navigate through our fun story</li>
+              </ol>
+            </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h3>Do I need a VR headset</h3>
+          <br>
+          <p>
+            While a VR headset is highly recommened to get the full experience, we have a version thats just for desktop users
+          </p>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Join our emailing list!</h2>
+        <form method="POST" action="" role="form">
+            {{ emailForm.hidden_tag() }}
+            {% for field in emailForm %}
+            <!-- <label for="{{field.name}}">{{field.label.text}}</label> -->
+                {{ render_field(field) }}
+            {% endfor %}
+            <button type="submit" class="btn btn-info" id="submit">{{thanks}}</button>
+          </form>
+      </div>
+      <div class="col-md-6">
+        <h1 style="font-size:5em;">Website is a work in progress</h1>
+
+      </div>
+    </div>
+
   </div>
 </body>
 {%endblock%}

@@ -39,7 +39,19 @@ class User(Model, UserMixin):
                 )
         except IntegrityError:
             flash("We already have a user like that. Try logging in!")
+
+class Purchase(Model):
+    #add foriegn key field
+    # user = ForiegnKeyField(model=User.username)
+    # sendToEmailOnFile = BooleanField()
+    paid = BooleanField(default=False)
+    userFeedback = CharField()
+
+class Contact(Model):
+    message = CharField()
+    # sender = # foriegn key field
+
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([User], safe=True)
+    DATABASE.create_tables([User, Contact,], safe=True)
     DATABASE.close()

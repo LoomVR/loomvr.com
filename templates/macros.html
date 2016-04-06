@@ -5,16 +5,9 @@
                 <div class="notification error">{{ error }}</div>
             {% endfor %}
         {% endif %}
-        {{ field(placeholder=field.label.text) }}
+        {%if "Csrf" not in field.label.text %}
+        <label for="{{field.label.text}}">{{field.label.text}}</label>
+        {%endif%}
+        {{ field(placeholder=field.label.text, class="form-control", id="{{field.label.text}}") }}
     </div>
-{% endmacro %}
-
-
-<!-- this needs a lot more work -->
-<!-- 2 parts, supply demand model itself and then accessing the
-price specifically and altering it by whatever the price ends up being -->
-{% macro apply_market_price() %}
-  {% for listing in posts %}
-      <div>{{listing.ask}}<div>
-  {% endfor %}
 {% endmacro %}

@@ -28,3 +28,13 @@ class RegisterForm(Form):
 class LoginForm(Form):
     email = StringField('Email', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired()])
+
+class preorderForm(Form):
+    email= StringField("Email you want us to send access code to", validators=[InputRequired()])
+    #more work needed
+
+class contactForm(Form):
+    message= TextAreaField()
+
+class emailList(Form):
+    email= StringField("Join our mailing list", validators=[InputRequired()])

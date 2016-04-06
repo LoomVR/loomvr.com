@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template,g, redirect, url_for, flash
+from flask import Flask, render_template,g, redirect, url_for, flash, jsonify
 from flask.ext.bcrypt import check_password_hash
 from flask.ext.login import (LoginManager, login_user, logout_user, login_required, current_user)
 
@@ -27,9 +27,14 @@ def before_request():
     g.db.connect()
     g.user = current_user
 
-@app.route("/")
+@app.route("/", methods=("GET", "POST"))
 def index():
-    return render_template("index.html")
+    form = forms.emailList()
+    if form.validate_on_submit():
+        print(form.email.data)
+        print("thanks for your email")
+        return render_template("index.html", emailForm = form, thanks ="Thanks!")
+    return render_template("index.html", emailForm = form, thanks="Submit")
 
 @app.route("/login", methods=("GET", "POST"))
 def login():
@@ -66,6 +71,14 @@ def register():
         return redirect(url_for("index"))
         # return "nice register form submission <a href="">Go Home</a>"
     return render_template("register.html", form=form)
+
+@app.route("/preorder")
+def preorder():
+    form = forms.preorderForm()
+    if form.validate_on_submit():
+        #send them an email in the future
+        pass
+    return render_template("order.html")
 
 @app.route("/blog")
 def blog():
