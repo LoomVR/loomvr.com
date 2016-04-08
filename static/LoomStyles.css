@@ -5,5 +5,16 @@
 }
 li {
   display: inline;
-  text-decoration: none; 
+  text-decoration: none;
+}
+
+#mainCarousel {
+  /*height: 230px; nahh*/
+  height: auto;
+  width: auto;
+  overflow: hidden;
+}
+
+#logo {
+  height: 80px;
 }
