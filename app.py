@@ -46,6 +46,7 @@ def index():
         message.add_to("daxaxelrod@gmail.com")
         message.set_subject("Loom interest")
         message.set_html(form.email.data)
+        message.set_from(fromEmail)
         status, msg = sg.send(message)
         print("thanks for your email")
         return render_template("index.html", emailForm = form, thanks="Thanks!")
