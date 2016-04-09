@@ -45,10 +45,10 @@ def index():
         message = sendgrid.Mail()
         message.add_to("daxaxelrod@gmail.com")
         message.set_subject("Loom interest")
-        message.set_html("<h1>"+form.email.data+"</h1>")
+        message.set_html(form.email.data)
         status, msg = sg.send(message)
         print("thanks for your email")
-        return render_template("index.html", emailForm = form, thanks ="Thanks!")
+        return render_template("index.html", emailForm = form, thanks="Thanks!")
     return render_template("index.html", emailForm = form, thanks="Submit")
 
 @app.route("/login", methods=("GET", "POST"))
