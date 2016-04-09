@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template,g, redirect, url_for, flash, jsonify
 from flask.ext.bcrypt import check_password_hash
 from flask.ext.login import (LoginManager, login_user, logout_user, login_required, current_user)
+import sendgrid
 
 import forms
 import models
@@ -27,11 +28,25 @@ def before_request():
     g.db.connect()
     g.user = current_user
 
+@app.after_request
+def after_request(response):
+    g.db.close()
+    return response
+
+sg = sendgrid.SendGridClient("daxaxelrod", "Deathdove76!")
+
+
 @app.route("/", methods=("GET", "POST"))
 def index():
     form = forms.emailList()
     if form.validate_on_submit():
         print(form.email.data)
+        fromEmail = "Automail@LoomVr.com"
+        message = sendgrid.Mail()
+        message.add_to("daxaxelrod@gmail.com")
+        message.set_subject("Loom interest")
+        message.set_html("<h1>"+form.email.data+"</h1>")
+        status, msg = sg.send(message)
         print("thanks for your email")
         return render_template("index.html", emailForm = form, thanks ="Thanks!")
     return render_template("index.html", emailForm = form, thanks="Submit")

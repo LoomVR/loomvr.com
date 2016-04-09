@@ -1,8 +1,45 @@
+body {
+  background-color: #06BBC6;
+}
+
+.navbar-custom {
+  background-color: #FFFFFF77;
+}
+
 .custom-shader {
   background-color: green;
+
   border-radius: 25px;
+}
+.team-pic {
+  max-width: 70%;
+  border-radius: 25px;
+  margin-bottom: 30px;
 
 }
+.navbar {
+   background-color: rgba(0,0,0, .5);
+   background: rgba(0,0,0, .5);;
+   border-color: rgba(0,0,0, .5);;
+}
+
+.navbar li { color: #000 }
+
+#mailingForm {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 8%;
+}
+
+.about-us{
+  background-color: #ffffff
+}
+
+.imageMajor {
+  margin-top: 7%;
+  max-width: 90%;
+}
+
 li {
   display: inline;
   text-decoration: none;
@@ -16,5 +53,4 @@ li {
 }
 
 #logo {
-  height: 80px;
 }

@@ -2,24 +2,129 @@
 {% from "macros.html" import render_field %}
 {%block content%}
 <body>
-  <div class="container">
-    <div class="row">
-      <h1 class="jumbotron col-md-10"><img id="logo" src="static/img/loomlogosticker.png" alt="" /> LOOMVR</h1>
-      <div class="col-md-2">
-          {% if current_user.is_authenticated %}
-              <h2>Welcome {{current_user.username }}</h2>
-              <h2 class="btn"><a href="/logout">Logout</a></h2>
-          {% else %}
-          <ul>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
-          </ul>
-          {%endif%}
+  <!-- <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand"><img src="static\img\loombusinesscardwhite.jpg" alt="" style="height:100%;"/></a>
       </div>
+      <ul class="nav navbar-nav">
+        <li class="active">Home</li>
+        <li>About Us</li>these should all have a tags in them
+        <li>Pre-Order</li>
+        <li>Contact</li>
+      </ul>
     </div>
+  </nav>
+ -->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="static\img\loombusinesscardwhite.jpg" alt="" style="height:100%;"/></a>
+      </div>
+      <ul class="nav navbar-nav pull-right">
+        <li class="active"><a href="#">About Us</a></li>
+        <li><a href="#">Pre-Order</a></li>
+        <li><a href="#">Contact</a></li>
+            {% if current_user.is_authenticated %}
+                <li>Welcome {{current_user.username }}</li>
+                <li class="btn"><a href="/logout">Logout</a></li>
+            {% else %}
+              <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li>
+            {%endif%}
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <img id="logo" src="static\img\loom vr back 720.png" alt="" />
+  </div>
+  <div class="container">
+    <!-- <div class="row">
+      <h1 class="jumbotron col-md-10">LOOMVR</h1>
+      <div class="col-md-12">
+        <ul>
+        </ul>
+      </div>
+    </div> -->
 
     <div class="row">
-      <div class="col-md-6">
+        <div class="col-md-4 text-center">
+            <img class="imageMajor" src="static\img\whatAreWe.png" alt="" />
+        </div>
+        <div class="col-md-4 text-center">
+            <!-- <h3>What Features help you learn?</h3>
+            <br>
+            <p>
+              <ol>
+                <li>See the definition of objects in the world</li>
+                <li>Have actual conversations with the townspeople -microphone required-</li>
+                <li>Navigate through our fun story</li>
+              </ol>
+            </p> -->
+            <img src="static\img\Learning.png" class="imageMajor" alt="" />
+        </div>
+        <div class="col-md-4 text-center">
+          <!-- <h3>Do I need a VR headset</h3>
+          <br>
+          <p>
+            While a VR headset is highly recommened to get the full experience, we have a version thats just for desktop users
+          </p> -->
+          <img src="static\img\Vr.png" class="imageMajor" alt="" />
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>Join our emailing list!</h2>
+        <form method="POST" id="mailingForm" action="" role="form">
+            {{ emailForm.hidden_tag() }}
+            {% for field in emailForm %}
+            <!-- <label for="{{field.name}}">{{field.label.text}}</label> -->
+                {{ render_field(field) }}
+            {% endfor %}
+            <button type="submit" class="btn btn-success" style="margin: 0 auto;" id="submit">{{thanks}}</button>
+          </form>
+      </div>
+      <!-- <div class="col-md-6">
+        <h1 style="font-size:5em;">Website is a work in progress</h1>
+      </div> -->
+    </div>
+  </div>
+    <div class="row about-us">
+      <div class="col-md-12">
+        <h3 class="text-center">About us</h3>
+        <br>
+        <br>
+        <p class="text-center">
+          We are a group of four college students who created Loom out of our dorm rooms.<br> We want to build the productive future of VR
+        </p>
+        <br>
+      </div>
+    </div>
+    <div class="row about-us">
+      <!-- all our pictures -->
+      <div class="col-md-3 text-center">
+        <img src="" class="team-pic" alt="" />
+        <h3>David Axelrod</h3>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="" class="team-pic" alt="" />
+        <h3>Alex Jackson</h3>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="" class="team-pic" alt="" />
+        <h3>Jack Guinta</h3>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="" class="team-pic" alt="" />
+        <h3>Jesse Pelzar</h3>
+      </div>
+    </div>
+<div class="container">
+
+
+    <div class="row">
+      <div class="col-md-12">
         <div id="mainCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
@@ -58,47 +163,8 @@
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <h3>What is loom? (add icons)</h3>
-        </div>
-        <div class="col-md-4 text-center">
-            <h3>What Features help you learn?</h3>
-            <br>
-            <p>
-              <ol>
-                <li>See the definition of objects in the world</li>
-                <li>Have actual conversations with the townspeople -microphone required-</li>
-                <li>Navigate through our fun story</li>
-              </ol>
-            </p>
-        </div>
-        <div class="col-md-4 text-center">
-          <h3>Do I need a VR headset</h3>
-          <br>
-          <p>
-            While a VR headset is highly recommened to get the full experience, we have a version thats just for desktop users
-          </p>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Join our emailing list!</h2>
-        <form method="POST" action="" role="form">
-            {{ emailForm.hidden_tag() }}
-            {% for field in emailForm %}
-            <!-- <label for="{{field.name}}">{{field.label.text}}</label> -->
-                {{ render_field(field) }}
-            {% endfor %}
-            <button type="submit" class="btn btn-info" id="submit">{{thanks}}</button>
-          </form>
-      </div>
-      <div class="col-md-6">
-        <h1 style="font-size:5em;">Website is a work in progress</h1>
-
-      </div>
-    </div>
 
   </div>
+</div>
 </body>
 {%endblock%}

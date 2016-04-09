@@ -6,7 +6,6 @@
             {% endfor %}
         {% endif %}
         {%if "Csrf" not in field.label.text %}
-        <label for="{{field.label.text}}">{{field.label.text}}</label>
         {%endif%}
         {{ field(placeholder=field.label.text, class="form-control", id="{{field.label.text}}") }}
     </div>
