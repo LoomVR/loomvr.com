@@ -37,4 +37,4 @@ class contactForm(Form):
     message= TextAreaField()
 
 class emailList(Form):
-    email= StringField("Join our mailing list", validators=[InputRequired()])
+    email= StringField("Join our mailing list", validators=[InputRequired(), Email()])

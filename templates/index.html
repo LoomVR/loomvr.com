@@ -27,8 +27,8 @@
         <li><a href="#">Pre-Order</a></li>
         <li><a href="#">Contact</a></li>
             {% if current_user.is_authenticated %}
-                <li>Welcome {{current_user.username }}</li>
-                <li class="btn"><a href="/logout">Logout</a></li>
+
+                <li><a href="/logout">Logout</a></li>
             {% else %}
               <li><a href="/register">Register</a></li>
               <li><a href="/login">Login</a></li>
@@ -62,7 +62,21 @@
                 <li>Navigate through our fun story</li>
               </ol>
             </p> -->
-            <img src="static\img\Learning.png" class="imageMajor" alt="" />
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-dark">
+                <img src="static\img\Learning.png" class="imageMajor" alt="" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Learning<i class="material-icons right">more_vert</i></span>
+                <p><a href="#"></a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Learn through Immersion<i class="material-icons right">close</i></span>
+                <p>Learn a language through immersion</p>
+              </div>
+            </div>
+
+
         </div>
         <div class="col-md-4 text-center">
           <!-- <h3>Do I need a VR headset</h3>
@@ -70,7 +84,22 @@
           <p>
             While a VR headset is highly recommened to get the full experience, we have a version thats just for desktop users
           </p> -->
-          <img src="static\img\Vr.png" class="imageMajor" alt="" />
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img src="static\img\Vr.png" class="imageMajor" alt="" />
+          </div>
+          <div class="card-content">
+            <span class="card-title activator text-darken-4">What is Loom?<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Well Let me tell you!<i class="material-icons right">close</i></span>
+            <p>Here's what I'll tell you</p>
+          </div>
+        </div>
+
+
         </div>
     </div>
     <div class="row">
@@ -124,8 +153,22 @@
         <h3>Jesse Pelzar</h3>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <br>
+        <h1>Learn with Loom</h1>
+        <p>Loom is a desktop application that allows user to learn a language in an imersive environment. Users can verbally speak with characters, play games, explore our town and much much more!</p>
+        <br>
+      </div>
+    </div>
+    <div class="row vr-centric text-center">
+      <div class="col-md-12">
+        <h1>Built for Vr</h1>
+        <p>We focused our development to prepare for the launch of major vr headsets. We believe that a fully immersive experience is the quickest way to learn any language and we want to place</p>
+        <br>
+      </div>
+    </div>
 <div class="container">
-
 
     <div class="row">
       <div class="col-md-12">
@@ -135,6 +178,7 @@
             <li data-target="#mainCarousel" data-slide-to="1"></li>
             <li data-target="#mainCarousel" data-slide-to="2"></li>
             <li data-target="#mainCarousel" data-slide-to="3"></li>
+            <li data-target="#mainCarousel" data-slide-to="4"></li>
           </ol>
 
           <!-- slide wrapper -->
@@ -149,6 +193,10 @@
 
           <div class="item">
             <img src="static/img/cheepiesren.jpg" alt="Chipis grill" />
+          </div>
+
+          <div class="item">
+            <img src="static/img/ladywithoculus.jpg" alt="" />
           </div>
 
         </div>
@@ -170,5 +218,6 @@
 
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </body>
 {%endblock%}

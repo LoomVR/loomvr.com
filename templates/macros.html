@@ -7,6 +7,6 @@
         {% endif %}
         {%if "Csrf" not in field.label.text %}
         {%endif%}
-        {{ field(placeholder=field.label.text, class="form-control", id="{{field.label.text}}") }}
+        {{ field(placeholder=field.label.text, class="form-control", id=field.label.text.replace(" ","")) }}
     </div>
 {% endmacro %}

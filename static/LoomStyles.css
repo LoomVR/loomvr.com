@@ -17,6 +17,9 @@ body {
   margin-bottom: 30px;
 
 }
+#Joinourmailinglist {
+  background-color: white;
+}
 .navbar {
    background-color: rgba(0,0,0, .5);
    background: rgba(0,0,0, .5);;
@@ -35,9 +38,13 @@ body {
   background-color: #ffffff
 }
 
+.vr-centric {
+  background-color: #ffffff
+}
+
 .imageMajor {
-  margin-top: 7%;
-  max-width: 90%;
+
+
 }
 
 li {
