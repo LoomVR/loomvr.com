@@ -23,15 +23,14 @@
         <a class="navbar-brand" href="#"><img src="static\img\loombusinesscardwhite.jpg" alt="" style="height:100%;"/></a>
       </div>
       <ul class="nav navbar-nav pull-right">
-        <li class="active"><a href="#">About Us</a></li>
-        <li><a href="#">Pre-Order</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#aboutus" class="page-scroll">About Us</a></li>
+        <li><a href="#preorder" class="page-scroll">Pre-Order</a></li>
+        <li><a href="#contact" class="page-scroll">Contact</a></li>
             {% if current_user.is_authenticated %}
-
-                <li><a href="/logout">Logout</a></li>
+                <!-- <li><a href="/logout">Logout</a></li> -->
             {% else %}
-              <li><a href="/register">Register</a></li>
-              <li><a href="/login">Login</a></li>
+              <!-- <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li> -->
             {%endif%}
       </ul>
     </div>
@@ -50,13 +49,13 @@
 
     <div class="row">
         <div class="col-md-4 text-center">
-          <div class="card">
+          <div class="card" id="aboutus">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="imageMajor" src="static\img\whatAreWe.png" alt="LoomVR Logo" />
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">LoomVR<i class="material-icons right">more_vert</i></span>
-              <p>LoomVr is a language company</p>
+              <span class="card-title activator grey-text text-darken-4">What is Loom?<i class="material-icons right">more_vert</i></span>
+
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Little more about loom<i class="material-icons right">close</i></span>
@@ -186,6 +185,7 @@
         <br>
       </div>
     </div>
+  </div>
 <div class="container">
 
     <div class="row">
@@ -232,10 +232,23 @@
         </div>
       </div>
     </div>
-
-
   </div>
-</div>
+  <div class="row about-us text-center">
+    <div class="col-md-12">
+      <h2 id="preorder">Preorder</h2>
+      <h6>While you can'y preorder right now, join our mailing list to find out more information and when loom is ready for preorder.</h6>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center" id="contact">
+      <h2>Contact Us!</h2>
+      <p>Shoot us an email! <br>contact@loomvr.com</p>
+    </div>
+  </div>
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </body>
 {%endblock%}

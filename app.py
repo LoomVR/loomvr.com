@@ -67,7 +67,6 @@ def login():
                 return redirect(url_for('index'))
             else:
                 flash("Password doesnt match our records", "error")
-
     return render_template("login.html", form=form)
 
 @app.route("/logout", methods=("GET", "POST"))
