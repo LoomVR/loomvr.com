@@ -28,7 +28,7 @@ class User(Model, UserMixin):
     def create_user(cls, username, first_name, last_name, email, passwordinput, is_admin=False):
         try:
             with DATABASE.transaction():
-                cls.create(
+                cls.get_or_create(
                 #order matters
                 username = username,
                 first_name = first_name,
@@ -51,7 +51,16 @@ class Contact(Model):
     message = CharField()
     # sender = # foriegn key field
 
+class BlogPost(Model):
+    title = CharField()
+    body = TextField()
+    author = CharField()
+
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([User, Contact,], safe=True)
+    DATABASE.create_tables([User, Contact,BlogPost], safe=True)
+    # User.create_user("david", "David","Axelrod", "daxaxelrod@gmail.com","Axelpods",True)
+    # User.create_user("alex", "David","Jackson", "daxaxelrod@gmail.com","alex",True)
+    # User.create_user("jack", "David","Guinta", "daxaxelrod@gmail.com","jack",True)
+    # User.create_user("jesse", "David","Pelzar", "daxaxelrod@gmail.com","jesse",True)
     DATABASE.close()

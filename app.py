@@ -33,7 +33,7 @@ def after_request(response):
     g.db.close()
     return response
 
-sg = sendgrid.SendGridClient("daxaxelrod", "Deathdove76!")
+sg = sendgrid.sendgrid.SendGridClient("daxaxelrod", "Deathdove76!")
 
 
 @app.route("/", methods=("GET", "POST"))
@@ -75,6 +75,10 @@ def logout():
     flash("See you soon!", "success")
     return redirect(url_for('index'))
 
+@app.route("/threeDee")
+def threeDee():
+    return render_template("threeDee.html")
+
 @app.route("/register", methods=("GET", "POST"))
 def register():
     form = forms.RegisterForm()
@@ -97,7 +101,8 @@ def preorder():
 
 @app.route("/blog")
 def blog():
-    return "Blog coming in the future"
+    posts = models.BlogPost.select()
+    return render_template("blogs.html", posts = posts)
 
 if __name__ == "__main__":
     models.initialize()
