@@ -33,7 +33,7 @@ def after_request(response):
     g.db.close()
     return response
 
-sg = sendgrid.sendgrid.SendGridClient("daxaxelrod", "Deathdove76!")
+sg = sendgrid.SendGridClient("daxaxelrod", "Deathdove76!")
 
 
 @app.route("/", methods=("GET", "POST"))
