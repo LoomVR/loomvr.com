@@ -35,7 +35,30 @@
   </nav>
  -->
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav>
+   <div class="nav-wrapper navbar-inverse">
+     <a href="#" class="brand-logo">LoomVR</a>
+     <a href="#" data-activates="mobile-nav" class="button-collapse right-5"><i class="material-icons">menu</i></a>
+     <ul class="right hide-on-med-and-down left-3">
+       <li><a href="#">Home</a></li>
+       <li><a href="#aboutus" class="page-scroll">Our Team</a></li>
+       <li><a href="#mailing-list" class="page-scroll">Contact</a></li>
+     </ul>
+     <ul class="side-nav" id="mobile-nav">
+       <li><a href="#">Home</a></li>
+       <li><a href="#aboutus" class="page-scroll">Our Team</a></li>
+       <li><a href="#mailing-list" class="page-scroll">Contact</a></li>
+       <!-- <li class="login-toggle"><a class="modal-trigger" href="#modal-login">Login</a></li> modal style-->
+
+     </ul>
+   </div>
+ </nav>
+
+
+
+
+
+  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#"><img src="static\img\loombusinesscardwhite.jpg" alt="" style="height:100%;"/></a>
@@ -46,15 +69,15 @@
         <li><a href="#contact" class="page-scroll">Contact</a></li>
         <li><a href="/blog">Blog</a></li>
             {% if current_user.is_authenticated%}
-                <!-- <li><a href="/logout">Logout</a></li> -->
+                <li><a href="/logout">Logout</a></li>
 
             {% else %}
-              <!-- <li><a href="/register">Register</a></li>
-              <li><a href="/login">Login</a></li> -->
+               <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li>
             {%endif%}
       </ul>
     </div>
-  </nav>
+  </nav> -->
   <div class="row">
     <img id="logo" src="static\img\loom vr back 720.png" alt="" />
   </div>
@@ -77,8 +100,8 @@
               <span class="card-title activator grey-text text-darken-4">What is Loom?<i class="material-icons right">more_vert</i></span>
             </div>
             <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Little more about loom<i class="material-icons right">close</i></span>
-              <p>Explore a virtual Spanish town and speak with native Spaniards, while trying to build a life for yourself in Spain. Play mini games to earn money and strengthen your vocabulary. Get lost in the immersive experience, and live out your dreams of visiting a foreign country while becoming fluent in Spanish. </p>
+              <span class="card-title grey-text text-darken-4"><strong>What is Loom?</strong><i class="material-icons right">close</i></span>
+              <h3 class="flow-text">Explore a virtual Spanish town and speak with native Spaniards, while trying to build a life for yourself in Spain. Play mini games to earn money and strengthen your vocabulary. Get lost in the immersive experience, and live out your dreams of visiting a foreign country while becoming fluent in Spanish. </h3>
             </div>
 
           </div>
@@ -98,12 +121,12 @@
                 <img src="static\img\Learning.png" class="imageMajor" alt="" />
               </div>
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Our Product<i class="material-icons right">more_vert</i></span>
+                <span class="card-title activator grey-text text-darken-4">Education through Immersion</span>
                 <p><a href="#"></a></p>
               </div>
               <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Education through Immersion<i class="material-icons right">close</i></span>
-                <p>
+                <span class="card-title grey-text text-darken-4"><strong>Education through Immersion</strong><i class="material-icons right ">close</i></span>
+                <p class="flow-text">
                   Loom VR is lightyears ahead of contemporary language learning programs. Why make language learning a chore? Why pay hundreds of dollars for a program filled with glorified index cards? Loom VR is a real world, real time, language learning experience that revolutionizes the learning process.
                 </p>
               </div>
@@ -126,8 +149,8 @@
             <span class="card-title activator text-darken-4">Why VR?<i class="material-icons right">more_vert</i></span>
           </div>
           <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Why VR?<i class="material-icons right">close</i></span>
-              <p>
+              <span class="card-title grey-text text-darken-4"><strong>Why VR?</strong><i class="material-icons right">close</i></span>
+              <p class="flow-text">
                 Loom VR is an immersive language learning environment that enables you to learn at a faster pace than any other program on the market. The best way to learn a language is to immerse yourself entirely in the language through sight, sound, and speech.
               </p>
             <!-- <ul class="collection">
@@ -142,7 +165,7 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-md-12 text-center">
+      <div class="col-md-12 text-center" id="mailing-list">
         <h2>Join our emailing list!</h2>
         <form method="POST" id="mailingForm" action="" role="form">
             {{ emailForm.hidden_tag() }}
@@ -158,17 +181,6 @@
       </div> -->
     </div>
   </div>
-    <div class="row about-us">
-      <div class="col-md-12">
-        <h3 class="text-center">About us</h3>
-        <br>
-        <br>
-        <p class="text-center">
-          We are a group of four college students who created Loom out of our dorm rooms.<br> We want to build the productive future of VR
-        </p>
-        <br>
-      </div>
-    </div>
     <div class="row about-us">
       <!-- all our pictures -->
       <div class="col-md-3 text-center">
@@ -190,21 +202,6 @@
         <h4>Designer</h4>
         <img src="static\img\jesse.jpg" class="team-pic" alt="" />
         <h3>Jesse Pelzar</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <br>
-        <h1>Learn with Loom</h1>
-        <p>Loom is a desktop application that allows user to learn a language in an imersive environment. Users can verbally speak with characters, play games, explore our town and much much more!</p>
-        <br>
-      </div>
-    </div>
-    <div class="row vr-centric text-center">
-      <div class="col-md-12">
-        <h1>Built for Vr</h1>
-        <p>We focused our development to prepare for the launch of major vr headsets. We believe that a fully immersive experience is the quickest way to learn any language and we want to place</p>
-        <br>
       </div>
     </div>
   </div>
@@ -255,33 +252,20 @@
       </div>
     </div>
   </div>
-  <div class="row about-us text-center">
+  <!-- <div class="row about-us text-center">
     <div class="col-md-12">
       <h2 id="preorder">Preorder</h2>
       <h6>While you can'y preorder right now, join our mailing list to find out more information and when loom is ready for preorder.</h6>
       <br>
-      <!-- <p>Like us on Facebook</p>
+      <p>Like us on Facebook</p>
       <div
         class="fb-like"
         data-share="true"
         data-width="450"
         data-show-faces="true">
-      </div> -->
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div id="testingHighlights" class="card text-center">
-        <h2>Testing mouseover</h2>
-        <br><br>
-        <div id="placingDiv">
-            <h1>WEEEEEEEE</h1>
-        </div>
-        <br><br>
-        <h2>testing again</h2>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-md-12 text-center about-us" id="contact">
@@ -320,7 +304,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-<!-- <script type="text/javascript"> -->
+<!-- <script type="text/javascript">
   function placeDiv(xPos, yPos){
     var d = document.getElementById("placingDiv");
     // var d = $("#placingDiv");
@@ -336,6 +320,6 @@
   }
 
 
-</script>
+</script> -->
 </body>
 {%endblock%}
