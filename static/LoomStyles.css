@@ -67,6 +67,9 @@ li {
   margin: 5% 6% 0 6%;
 
 }
+#centerCaption {
+  display: inline block;
+}
 .brand-logo {
   margin-left: 3%;
 

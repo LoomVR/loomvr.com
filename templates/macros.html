@@ -1,4 +1,4 @@
-{% macro render_field(field) %}
+{% macro render_field(field, placeHolder) %}
     <div class="field form-group">
         {% if field.errors %}
             {% for error in field.errors %}
@@ -7,6 +7,6 @@
         {% endif %}
         {%if "Csrf" not in field.label.text %}
         {%endif%}
-        {{ field(placeholder=field.label.text, class="form-control", id=field.label.text.replace(" ","")) }}
+        {{ field(class="form-control", id=field.label.text.replace(" ",""), placeholder=placeHolder )}}
     </div>
 {% endmacro %}
