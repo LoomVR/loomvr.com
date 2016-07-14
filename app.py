@@ -49,8 +49,9 @@ def index():
         message.set_from(fromEmail)
         status, msg = sg.send(message)
         print("thanks for your email")
-        return render_template("index.html", emailForm = form, thanks="Thanks!")
-    return render_template("index.html", emailForm = form, thanks="Submit")
+        return render_template("indexTemplated.html", emailForm=form, thanks="Thanks!")
+    return render_template("indexTemplated.html", emailForm=form, thanks="Submit")
+
 
 @app.route("/login", methods=("GET", "POST"))
 def login():
@@ -69,15 +70,18 @@ def login():
                 flash("Password doesnt match our records", "error")
     return render_template("login.html", form=form)
 
+
 @app.route("/logout", methods=("GET", "POST"))
 def logout():
     logout_user()
     flash("See you soon!", "success")
     return redirect(url_for('index'))
 
+
 @app.route("/threeDee")
 def threeDee():
     return render_template("threeDee.html")
+
 
 @app.route("/register", methods=("GET", "POST"))
 def register():
@@ -90,6 +94,7 @@ def register():
         return redirect(url_for("index"))
         # return "nice register form submission <a href="">Go Home</a>"
     return render_template("register.html", form=form)
+
 
 @app.route("/preorder")
 def preorder():
