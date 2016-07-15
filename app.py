@@ -49,8 +49,8 @@ def index():
         message.set_from(fromEmail)
         status, msg = sg.send(message)
         print("thanks for your email")
-        return render_template("indexTemplated.html", emailForm=form, thanks="Thanks!")
-    return render_template("indexTemplated.html", emailForm=form, thanks="Submit")
+        return render_template("indexTemplated.html", emailForm=form, thanks="Thanks!", disabled="disabled")
+    return render_template("indexTemplated.html", emailForm=form, thanks="Submit", disabled="")
 
 
 @app.route("/login", methods=("GET", "POST"))

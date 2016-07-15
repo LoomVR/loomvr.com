@@ -1,3 +1,11 @@
+/*!
+ * Start Bootstrap - Stylish Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/* Global Styles */
+
 html,
 body {
     width: 100%;
@@ -140,7 +148,7 @@ hr.small {
     margin: 5px 5px 0 0;
 }
 
-/* Header */
+/* Header put a nmed */
 
 .header {
     display: table;
@@ -177,7 +185,7 @@ hr.small {
     width: 100%;
     height: 400px;
     color: #fff;
-    background: url(../img/callout.jpg) no-repeat center center scroll;
+    background: url(../img/world.png) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
