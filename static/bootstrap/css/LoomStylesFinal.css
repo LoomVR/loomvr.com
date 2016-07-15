@@ -45,7 +45,7 @@ body {
 }
 
 .btn-light {
-    border-radius: 25%;
+    border-radius: 0;
     color: #333;
     background-color: rgb(255,255,255);
 }
